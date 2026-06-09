@@ -1,8 +1,8 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'Kavina — Math Tutor',
-  description: 'Math. Done Properly. Edexcel IGCSE & IAL specialist.',
+  title: 'MathEase — Maths Made Easy',
+  description: 'MathEase by Kavina. Edexcel IGCSE & IAL maths tutor. Book a free lesson.',
 };
 
 export default function RootLayout({ children }) {

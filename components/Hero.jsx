@@ -1,95 +1,104 @@
 export default function Hero() {
-  const cards = [
-    {
-      rotation: "-15",
-      x: "-220",
-      color: "#ff6b6b",
-      img: "card-algebra.png",
-      alt: "Algebra",
-    },
-    {
-      rotation: "-7",
-      x: "-110",
-      color: "#4ecdc4",
-      img: "card-calculus.png",
-      alt: "Calculus",
-    },
-    {
-      rotation: "0",
-      x: "0",
-      color: "#ffe66d",
-      img: "card-geometry.png",
-      alt: "Geometry",
-    },
-    {
-      rotation: "7",
-      x: "110",
-      color: "#a8e6cf",
-      img: "card-statistics.png",
-      alt: "Statistics",
-    },
-    {
-      rotation: "15",
-      x: "220",
-      color: "#dda0dd",
-      img: "card-trig.png",
-      alt: "Trig",
-    },
+  const symbols = [
+    { src: "image copy 12.png", x: "3%",   y: "4%",   size: 220, depth: 0.25, delay: 0,    rot: -8 },
+    { src: "image.png",         x: "80%",  y: "2%",   size: 200, depth: 0.45, delay: 0.08,  rot: 12 },
+    { src: "image copy 10.png", x: "-4%",  y: "38%",  size: 240, depth: 0.18, delay: 0.16,  rot: -5 },
+    { src: "image copy 13.png", x: "83%",  y: "34%",  size: 210, depth: 0.32, delay: 0.24,  rot: 10 },
+    { src: "image copy 9.png",  x: "38%",  y: "-2%",  size: 170, depth: 0.5,  delay: 0.32,  rot: -14 },
+    { src: "image copy 6.png",  x: "65%",  y: "8%",   size: 145, depth: 0.55, delay: 0.4,   rot: 6 },
+    { src: "image copy 7.png",  x: "5%",   y: "68%",  size: 180, depth: 0.4,  delay: 0.48,  rot: -10 },
+    { src: "image copy.png",    x: "76%",  y: "65%",  size: 190, depth: 0.35, delay: 0.56,  rot: 15 },
+    { src: "image copy 3.png",  x: "58%",  y: "78%",  size: 155, depth: 0.42, delay: 0.64,  rot: -12 },
+    { src: "image copy 5.png",  x: "18%",  y: "80%",  size: 140, depth: 0.6,  delay: 0.72,  rot: 8 },
+    { src: "image copy 4.png",  x: "92%",  y: "55%",  size: 160, depth: 0.3,  delay: 0.8,   rot: -6 },
+    { src: "image copy 2.png",  x: "-5%",  y: "72%",  size: 175, depth: 0.22, delay: 0.88,  rot: 11 },
+    { src: "image copy 8.png",  x: "72%",  y: "84%",  size: 130, depth: 0.65, delay: 0.96,  rot: -9 },
+    { src: "image copy 11.png", x: "30%",  y: "5%",   size: 135, depth: 0.48, delay: 1.04,  rot: 7 },
   ];
-
-  const marqueeText =
-    "EDEXCEL IGCSE \u00b7 CAMBRIDGE IGCSE \u00b7 GCSE 9\u20131 MATHS \u00b7 EDEXCEL A-LEVEL MATHS \u00b7 PURE MATHEMATICS \u00b7 IAL MATHEMATICS \u00b7 EXAM PREPARATION \u00b7 ALGEBRA \u00b7 TRIGONOMETRY \u00b7 CALCULUS \u00b7 STATISTICS \u00b7 PROBLEM SOLVING \u00b7 ";
 
   return (
     <section id="hero" className="section section--light">
-      {/* Top bar */}
-      <div className="hero-top">
-        <span className="hero-top__location">0760796819</span>
-        <span className="hero-top__email">kmanthuka@gmail.com</span>
-
-      </div>
-
-      {/* Heading */}
-      <h1 className="hero-name" aria-label="Math. Done Properly.">
-        <span className="char">Math.</span>
-        <span className="char"> Done Properly.</span>
-      </h1>
-
-      {/* Card stack */}
-      <div className="card-stack" id="cardStack">
-        {cards.map((c) => (
-          <div
-            key={c.alt}
-            className="topic-card"
-            data-base-rotation={c.rotation}
-            data-base-x={c.x}
-            style={{ "--card-color": c.color }}
-          >
-            <img
-              src={`/assets/images/${c.img}`}
-              alt={c.alt}
-              className="topic-card__img"
-              draggable="false"
-            />
-          </div>
+      {/* All 14 illustrated symbols — large, fixed, interactive */}
+      <div className="hero-symbols" aria-hidden="true">
+        {symbols.map((s, i) => (
+          <img
+            key={i}
+            className="hero-sym"
+            src={`/assets/images/image-flowing/${s.src}`}
+            alt=""
+            draggable="false"
+            data-depth={s.depth}
+            data-home-x={s.x}
+            data-home-y={s.y}
+            data-rot={s.rot}
+            style={{
+              left: s.x,
+              top: s.y,
+              width: `${s.size}px`,
+              "--float-delay": `${s.delay}s`,
+            }}
+          />
         ))}
       </div>
 
-      {/* Tagline */}
-      <h2 className="hero-tagline">
-        <span>MATH TUTOR,</span>
-        <span>MENTOR &amp; PROBLEM SOLVER</span>
-      </h2>
+      {/* Contact bar */}
+      <div className="hero-top">
+        <a href="tel:0760796819" className="hero-top__contact">
+          0760796819
+        </a>
+        <a href="mailto:kmanthuka@gmail.com" className="hero-top__contact">
+          kmanthuka@gmail.com
+        </a>
+      </div>
 
-      {/* Marquee */}
-      <div className="marquee">
-        <div className="marquee-track">
-          <span>{marqueeText}</span>
-          <span>{marqueeText}</span>
+      {/* Center content */}
+      <div className="hero-center">
+        <div className="hero-brand-group">
+          <h1 className="hero-brand">
+            <span className="hero-brand__line">Math</span>
+            <span className="hero-brand__line hero-brand__line--accent">Ease</span>
+          </h1>
+          <p className="hero-subtitle">Maths Made Easy</p>
+        </div>
+
+        <p className="hero-hook">
+          Your child doesn&rsquo;t need to &ldquo;try harder.&rdquo;
+          <br />
+          They need someone who makes it click.
+        </p>
+
+        <div className="hero-actions">
+          <a
+            href="https://wa.me/94760796819?text=Hi%20Kavina!%20I%27d%20love%20to%20book%20a%20free%20trial%20session%20%F0%9F%99%8C"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-btn hero-btn--primary"
+          >
+            Book a Free Lesson
+          </a>
+          <a href="#reviews" className="hero-btn hero-btn--ghost">
+            See Results &darr;
+          </a>
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      <div className="hero-trust">
+        <div className="hero-trust__item">
+          <strong>98%</strong>
+          <span>Pass Rate</span>
+        </div>
+        <div className="hero-trust__divider" aria-hidden="true" />
+        <div className="hero-trust__item">
+          <strong>50+</strong>
+          <span>Students</span>
+        </div>
+        <div className="hero-trust__divider" aria-hidden="true" />
+        <div className="hero-trust__item">
+          <strong>4.9&#9733;</strong>
+          <span>Rating</span>
+        </div>
+      </div>
+
       <div className="scroll-indicator">
         <span>Scroll</span>
         <div className="scroll-arrow">&darr;</div>

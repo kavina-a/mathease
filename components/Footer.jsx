@@ -1,7 +1,10 @@
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-wordmark">KAVINA</div>
+      <div className="footer-doodles" aria-hidden="true">
+        <img src="/assets/images/image-flowing/image copy 12.png" alt="" className="footer-doodle footer-doodle--1" draggable="false" />
+      </div>
+      <div className="footer-wordmark">MATHEASE</div>
       <div className="footer-strip">
         <span className="footer-copy">&copy; 2026 Kavina</span>
         <nav className="footer-links">

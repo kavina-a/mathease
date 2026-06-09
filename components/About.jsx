@@ -1,49 +1,52 @@
+const chapterSymbols = [
+  "image copy 13.png",
+  "image copy 6.png",
+  "image copy 3.png",
+  "image copy 12.png",
+  "image copy 10.png",
+  "image copy 9.png",
+  "image copy 5.png",
+];
+
 const chapters = [
   {
     n: "01",
-    icon: "∑",
     title: "Grade 8 & Above (Edexcel / Cambridge)",
     color: "#ff6b6b",
     desc: "Build strong math foundations early. Clear explanations that make harder topics easier later.",
   },
   {
     n: "02",
-    icon: "∫",
     title: "Edexcel IGCSE Mathematics",
     color: "#4ecdc4",
-    desc: "Master the Edexcel 9–1 syllabus. Concept clarity, exam strategies, and past paper practice.",
+    desc: "Master the Edexcel 9-1 syllabus. Concept clarity, exam strategies, and past paper practice.",
   },
   {
     n: "03",
-    icon: "△",
     title: "Cambridge IGCSE Mathematics",
     color: "#ffe66d",
     desc: "Understand the Cambridge approach. Learn the logic behind questions and common exam patterns.",
   },
   {
     n: "04",
-    icon: "θ",
     title: "Edexcel IAL Mathematics",
     color: "#dda0dd",
     desc: "Advanced math, explained step-by-step. Pure math topics broken down for clarity and confidence.",
   },
   {
     n: "05",
-    icon: "∞",
     title: "Online Classes",
     color: "#f4a261",
     desc: "Learn from anywhere. Interactive lessons designed to keep students engaged and focused.",
   },
   {
     n: "06",
-    icon: "★",
     title: "Group Classes",
     color: "#e76f51",
     desc: "Learn together. Grow faster. Collaborative sessions where students solve and discuss problems.",
   },
   {
     n: "07",
-    icon: "🧩",
     title: "Past Paper Revision",
     color: "#90be6d",
     desc: "Practice the questions that matter most. Focused past paper sessions with clear step-by-step solutions.",
@@ -60,9 +63,13 @@ const stats = [
 export default function About() {
   return (
     <section id="about" className="section section--dark">
-      {/* ── Psychological hook ── */}
+      <div className="about-doodles" aria-hidden="true">
+        <img src="/assets/images/image-flowing/image copy 7.png" alt="" className="about-doodle about-doodle--1" draggable="false" />
+      </div>
+
+      {/* Psychological hook */}
       <div className="about-hook">
-        <span className="section-label">ABOUT</span>
+        <span className="section-label section-label--light">ABOUT</span>
 
         <p className="about-hook__lead">
           Most students don&rsquo;t struggle with math because they&rsquo;re{" "}
@@ -104,7 +111,7 @@ export default function About() {
         </p>
       </div>
 
-      {/* ── Personal intro with photos ── */}
+      {/* Personal intro with photos */}
       <div className="about-intro">
         <div className="about-intro__content">
           <p className="about-intro__greeting">
@@ -151,22 +158,27 @@ export default function About() {
         </div>
       </div>
 
-      {/* ── Chapter carousel ── */}
+      {/* Chapter carousel */}
       <div className="chapters-section">
         <div className="chapters-header">
-          <span className="section-label">WHAT I TEACH</span>
+          <span className="section-label section-label--light">WHAT I TEACH</span>
           <h3 className="chapters-title">Explore the chapters</h3>
         </div>
         <div className="chapters-wrapper">
           <div className="chapters-track">
-            {chapters.map((c) => (
+            {chapters.map((c, i) => (
               <div
                 key={c.n}
                 className="chapter-card"
                 style={{ "--accent": c.color }}
               >
+                <img
+                  src={`/assets/images/image-flowing/${chapterSymbols[i]}`}
+                  alt=""
+                  className="chapter-card__sym"
+                  draggable="false"
+                />
                 <span className="chapter-card__number">{c.n}</span>
-                <div className="chapter-card__icon">{c.icon}</div>
                 <h4>{c.title}</h4>
                 <p>{c.desc}</p>
               </div>
@@ -175,12 +187,14 @@ export default function About() {
         </div>
       </div>
 
-      {/* ── Stats ── */}
+      {/* Stats */}
       <div className="stats-section">
         {stats.map((s) => (
           <div key={s.label} className="stat" data-target={s.target}>
-            <span className="stat__number">0</span>
-            <span className="stat__suffix">{s.suffix}</span>
+            <div className="stat__value">
+              <span className="stat__number">0</span>
+              <span className="stat__suffix">{s.suffix}</span>
+            </div>
             <span className="stat__label">{s.label}</span>
           </div>
         ))}

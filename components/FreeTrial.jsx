@@ -1,12 +1,10 @@
-const floatingSymbols = [
-  { sym: "\u222b", delay: "0s", x: "10%", y: "20%" },
-  { sym: "\u03c0", delay: "1.5s", x: "85%", y: "15%" },
-  { sym: "\u221e", delay: "3s", x: "20%", y: "75%" },
-  { sym: "\u221a", delay: "4.5s", x: "75%", y: "80%" },
-  { sym: "\u03a3", delay: "2s", x: "50%", y: "10%" },
-  { sym: "\u0394", delay: "5s", x: "90%", y: "50%" },
-  { sym: "\u03b8", delay: "3.5s", x: "5%", y: "50%" },
-  { sym: "\u2248", delay: "1s", x: "40%", y: "90%" },
+const floatingIllustrations = [
+  { src: "image copy 6.png",  x: "8%",  y: "15%",  size: 120, rot: -12 },
+  { src: "image copy 12.png", x: "85%", y: "10%",  size: 110, rot: 8 },
+  { src: "image copy 10.png", x: "15%", y: "72%",  size: 130, rot: 15 },
+  { src: "image.png",         x: "78%", y: "75%",  size: 105, rot: -8 },
+  { src: "image copy 13.png", x: "48%", y: "5%",   size: 95,  rot: -18 },
+  { src: "image copy 3.png",  x: "3%",  y: "45%",  size: 115, rot: -6 },
 ];
 
 export default function FreeTrial() {
@@ -35,14 +33,20 @@ export default function FreeTrial() {
       </div>
 
       <div className="floating-symbols" aria-hidden="true">
-        {floatingSymbols.map((s, i) => (
-          <span
+        {floatingIllustrations.map((s, i) => (
+          <img
             key={i}
-            className="float-sym"
-            style={{ "--delay": s.delay, "--x": s.x, "--y": s.y }}
-          >
-            {s.sym}
-          </span>
+            className="float-sym-img"
+            src={`/assets/images/image-flowing/${s.src}`}
+            alt=""
+            draggable="false"
+            style={{
+              left: s.x,
+              top: s.y,
+              width: `${s.size}px`,
+              transform: `rotate(${s.rot}deg)`,
+            }}
+          />
         ))}
       </div>
     </section>
