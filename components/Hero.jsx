@@ -1,3 +1,18 @@
+const proofFaces = [
+  {
+    src: "https://api.dicebear.com/7.x/lorelei/png?seed=Shenaya&size=80&backgroundColor=ffc8c8",
+    alt: "",
+  },
+  {
+    src: "https://api.dicebear.com/7.x/lorelei/png?seed=Amara&size=80&backgroundColor=c8f0ee",
+    alt: "",
+  },
+  {
+    src: "https://api.dicebear.com/7.x/lorelei/png?seed=Dilan&size=80&backgroundColor=e8dff5",
+    alt: "",
+  },
+];
+
 export default function Hero() {
   const symbols = [
     { src: "image copy 12.png", x: "3%",   y: "4%",   size: 220, depth: 0.25, delay: 0,    rot: -8 },
@@ -41,15 +56,6 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Contact bar */}
-      <div className="hero-top">
-        <a href="tel:0760796819" className="hero-top__contact">
-          0760796819
-        </a>
-        <a href="mailto:kmanthuka@gmail.com" className="hero-top__contact">
-          kmanthuka@gmail.com
-        </a>
-      </div>
 
       {/* Center content */}
       <div className="hero-center">
@@ -68,17 +74,47 @@ export default function Hero() {
         </p>
 
         <div className="hero-actions">
-          <a
-            href="https://wa.me/94760796819?text=Hi%20Kavina!%20I%27d%20love%20to%20book%20a%20free%20trial%20session%20%F0%9F%99%8C"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hero-btn hero-btn--primary"
-          >
-            Book a Free Lesson
-          </a>
-          <a href="#reviews" className="hero-btn hero-btn--ghost">
+          <div className="btn-playful-wrap">
+            <span className="free-sticker">FREE</span>
+            <a
+              href="tel:0701150250"
+              className="btn-playful btn-playful--teal"
+            >
+              Book Free Trial
+            </a>
+          </div>
+          <a href="#reviews" className="btn-playful btn-playful--ghost">
             See Results &darr;
           </a>
+        </div>
+
+        <div className="hero-proof">
+          <span className="hero-proof__tag">Join the club</span>
+          <div className="hero-proof__inner">
+            <div className="hero-proof__avatars" aria-hidden="true">
+              {proofFaces.map((face, i) => (
+                <img
+                  key={i}
+                  src={face.src}
+                  alt={face.alt}
+                  className="hero-proof__avatar hero-proof__avatar--photo"
+                  draggable="false"
+                  loading="lazy"
+                  decoding="async"
+                />
+              ))}
+              <span className="hero-proof__avatar hero-proof__avatar--more">+</span>
+            </div>
+            <div className="hero-proof__copy">
+              <p className="hero-proof__lead">
+                <strong>50+</strong> parents already trust us
+              </p>
+              <p className="hero-proof__sub">
+                <span className="hero-proof__stars" aria-hidden="true">★★★★★</span>
+                <span>4.9 avg · real reviews</span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 

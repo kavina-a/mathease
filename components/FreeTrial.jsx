@@ -19,16 +19,26 @@ export default function FreeTrial() {
           <span className="cta-word cta-word--5">FREE</span>
         </div>
         <div className="cta-bottom">
-          <a
-            href="https://wa.me/44760796819?text=Hi%20Kavina!%20I%27d%20love%20to%20book%20a%20free%20trial%20session%20%F0%9F%99%8C"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-button"
-            id="ctaButton"
-          >
-            <span>Book Your Free Session</span>
-          </a>
+          <div className="btn-playful-wrap btn-playful-wrap--large">
+            <span className="free-sticker free-sticker--large">FREE</span>
+            <a
+              href="https://wa.me/94701150250?text=Hi%20Kavina!%20I%27d%20love%20to%20book%20a%20free%20trial%20session%20%F0%9F%99%8C"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-playful btn-playful--coral btn-playful--large"
+            >
+              Book Your Free Session
+            </a>
+          </div>
+
           <p className="cta-subtext">No commitment. No card. Just math.</p>
+
+          <a href="tel:0701150250" className="phone-playful phone-playful--large">
+            <span className="phone-playful__icon">📞</span>
+            <span className="phone-playful__number">070 115 0250</span>
+          </a>
+
+          <p className="cta-trust">Trusted by 50+ Sri Lankan parents</p>
         </div>
       </div>
 
