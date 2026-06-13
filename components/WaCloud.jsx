@@ -60,8 +60,6 @@ export default function WaCloud() {
         rel="noopener noreferrer"
         aria-label="WhatsApp us to book a free trial"
       >
-        <span className="wa-float-sticker">FREE</span>
-
         {/* WhatsApp icon */}
         <svg
           className="wa-float-icon"

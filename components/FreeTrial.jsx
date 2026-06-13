@@ -22,9 +22,7 @@ export default function FreeTrial() {
           <div className="btn-playful-wrap btn-playful-wrap--large">
             <span className="free-sticker free-sticker--large">FREE</span>
             <a
-              href="https://wa.me/94701150250?text=Hi%20Kavina!%20I%27d%20love%20to%20book%20a%20free%20trial%20session%20%F0%9F%99%8C"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="tel:0701150250"
               className="btn-playful btn-playful--coral btn-playful--large"
             >
               Book Your Free Session

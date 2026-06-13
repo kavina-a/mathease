@@ -743,7 +743,7 @@ video {
   font-size: 1.1rem;
   font-weight: 700;
   text-decoration: none;
-  border-radius: 38% 62% 50% 50% / 55% 45% 55% 45%;
+  border-radius: 14px;
   box-shadow: 
     0 4px 0 #3db8b0,
     0 6px 20px rgba(78, 205, 196, 0.25);
@@ -2136,23 +2136,7 @@ video {
   position: relative;
 }
 
-/* FREE sticker on WhatsApp button */
-.wa-float-sticker {
-  position: absolute;
-  top: -8px;
-  right: -4px;
-  background: var(--accent-yellow);
-  color: var(--text-primary);
-  font-family: var(--font-handwritten);
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 5px;
-  transform: rotate(-10deg);
-  box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.1);
-  z-index: 2;
-  pointer-events: none;
-}
+/* wa-float-sticker removed */
 
 .wa-float-icon {
   width: 22px;
@@ -2682,7 +2666,8 @@ video {
 
   /* ── REVIEWS ───────────────────────────────────────────────── */
   #reviews {
-    padding: 64px 0 52px;
+    padding: 64px 0 80px;
+    overflow: visible;
   }
 
   .reviews-header {
@@ -2694,21 +2679,33 @@ video {
     font-size: clamp(1.8rem, 6vw, 2.8rem);
   }
 
-  .chat-stack {
-    padding: 0 16px;
-    gap: 16px;
+  /* Reviews section — centered on mobile */
+  #reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reviews-header {
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
   }
 
   .chat-arena {
-    max-width: 100%;
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    margin: 0 auto;
     height: 480px;
-    border-radius: 28px;
+    border-radius: 24px;
+    overflow: visible;
+    position: relative;
   }
 
+  /* Cards fill the arena */
   .chat-card {
     border-radius: 22px;
-    min-width: calc(100vw - 32px);
-    max-width: calc(100vw - 32px);
+    inset: 0;
   }
 
   .chat-card__body {
@@ -2717,6 +2714,40 @@ video {
 
   .chat-bubble {
     font-size: 0.84rem;
+  }
+
+  /* Swipe hint — visible below the card stack */
+  .chat-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding-bottom: 8px;
+    z-index: 20;
+    pointer-events: none;
+  }
+
+  .swipe-prompt {
+    gap: 10px;
+    padding: 9px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .swipe-prompt__text {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .swipe-arrow {
+    font-size: 1rem;
+    color: var(--accent-teal);
   }
 
   /* ── FREE TRIAL ────────────────────────────────────────────── */
