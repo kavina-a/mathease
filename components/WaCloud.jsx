@@ -82,7 +82,6 @@ export default function WaCloud() {
 
         <span className="wa-float-label">
           <span className="wa-float-text">WhatsApp Us</span>
-          <span className="wa-float-number">076 079 6819</span>
         </span>
       </a>
     </div>
