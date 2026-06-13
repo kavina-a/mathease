@@ -2376,13 +2376,15 @@ video {
     padding-bottom: 24px;
   }
 
-  /* Show only 6 symbols on mobile to reduce clutter */
-  .hero-sym:nth-child(n+7) {
-    display: none;
+  /* Mobile hero symbols — smaller, in-viewport, particle drift via JS */
+  .hero-symbols--mobile .hero-sym {
+    pointer-events: none !important;
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.1));
+    max-width: none !important;
   }
 
   .hero-sym {
-    max-width: 100px !important;
+    max-width: 88px !important;
     pointer-events: none !important;
   }
 
@@ -2898,8 +2900,8 @@ video {
 
 /* ── Small phones (≤ 540px) ──────────────────────────────────── */
 @media (max-width: 540px) {
-  .hero-sym {
-    max-width: 80px !important;
+  .hero-symbols--mobile .hero-sym {
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
   }
 
   .hero-brand {
@@ -2954,15 +2956,6 @@ video {
 @media (max-width: 430px) {
   .hero-brand {
     font-size: clamp(2.4rem, 13.5vw, 4.5rem);
-  }
-
-  .hero-sym {
-    max-width: 70px !important;
-  }
-
-  /* Show only 4 symbols on compact phones */
-  .hero-sym:nth-child(n+5) {
-    display: none;
   }
 
   .hero-hook {
@@ -3054,11 +3047,6 @@ video {
 @media (max-width: 375px) {
   .hero-brand {
     font-size: clamp(2.2rem, 14vw, 3.8rem);
-  }
-
-  /* Show only 3 symbols on tiny phones */
-  .hero-sym:nth-child(n+4) {
-    display: none;
   }
 
   .about-photo-collage {
